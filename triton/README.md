@@ -8,6 +8,24 @@
 
 # Triton - Aplikasi Manajemen Surat
 
+### Daftar Isi
+
+- [Deskripsi Produk](#deskripsi-produk)
+- [Tujuan](#tujuan)
+- [Fitur Utama](#fitur-utama)
+  - [Akun](#akun-pengguna)
+  - [Dashboard](#dashboard)
+  - [Surat Masuk](#surat-masuk)
+  - [Surat Keluar](#surat-keluar)
+  - [Kategori Surat](#kategori-surat)
+  - [Manajemen Pengguna](#manajemen-pengguna)
+  - [Jabatan](#jabatan)
+- [Teknologi](#teknologi)
+- [Rancangan](#rancangan)
+- [Instalasi](#instalasi)
+- [Screenshot](#screenshot)
+- [License](#license)
+
 ## Deskripsi Produk
 Triton adalah aplikasi berbasis web untuk mengelola surat masuk dan keluar, dilengkapi dengan fitur AI untuk ekstraksi data otomatis, klasifikasi isi, ringkasan, dan saran disposisi. Aplikasi ini dibangun menggunakan Laravel di sisi backend dan Vue.js di sisi frontend.
 
@@ -18,43 +36,76 @@ Triton adalah aplikasi berbasis web untuk mengelola surat masuk dan keluar, dile
 
 ## Fitur Utama
 
-### 📥 Surat Masuk
-- Upload dokumen (PDF, JPG, PNG).
-- **Ekstraksi Otomatis oleh AI**: Isi metadata surat (nomor, tanggal, pengirim, perihal).
-- **Klasifikasi Surat Otomatis**: AI menyarankan kategori surat.
-- **Ringkasan Surat Otomatis**: Ditampilkan untuk pratinjau cepat.
-- Disposisi saran dari AI.
-- Riwayat dan status surat terpantau.
+### Akun Pengguna
 
-### 📤 Surat Keluar
-- Pembuatan draft dan unggah dokumen.
-- Penomoran otomatis.
-- **AI Ringkasan Surat** untuk efisiensi review.
+- Login & Lupa Kata Sandi
+- Update profil dan ubah/reset kata sandi
+- Ganti bahasa: `id`, `en`, `ja`, `ko`, `ar`, `zh-CN`
+- Lihat dan hapus sesi login aktif
+- Hapus akun secara mandiri
 
-### 🔄 Disposisi
-- Disposisi ke pengguna lain.
-- AI memberikan **saran disposisi** berdasarkan isi surat.
-- Riwayat dan pelacakan proses.
+### Dashboard
 
-### 📁 Kategori Surat
-- AI menyarankan kategori saat input surat.
+- Ringkasan:
+  - Total surat masuk & keluar
+  - Jumlah surat masuk yang belum diproses
+  - Jumlah surat masuk yang harus diproses
+- Statistik performa:
+  - Rata-rata waktu proses surat bulanan
+  - Ketepatan waktu penyelesaian disposisi bulanan
+  - Tingkat konversi disposisi ke surat keluar per bulan
+- Grafik harian (bar chart):
+  - Surat masuk, surat keluar, dan disposisi
 
-### 👤 Manajemen Pengguna
-- CRUD pengguna dan pengaturan role.
-- Role bersifat **dinamis** (bisa ditambah/ubah).
-- Permission bersifat **statis**, digunakan di `Gate` Laravel.
+### Surat Masuk
 
-### 🔐 Role & Permission
-- Role dapat dikonfigurasi admin.
-- Permission statis dan digunakan untuk kontrol akses (Gate di Laravel, directive di Vue).
+- CRUD surat masuk
+- Upload file (pdf atau gambar) → Ekstrak data otomatis (opsional)
+- Ringkasan isi surat dengan AI
+- Rekomendasi kategori otomatis menggunakan AI
+- Tandai surat sebagai belum dibaca
+- Filter surat:
+  - Sudah dibaca / Belum dibaca
+  - Surat belum diproses
+  - Surat harus diproses
+- Disposisi:
+  - CRUD disposisi
+  - Rekomendasi isi disposisi dari AI
+  - Kirim email otomatis ke penerima disposisi
+  - Email pemberitahuan saat disposisi selesai
+- Surat balasan:
+  - Buat surat keluar sebagai balasan dari surat masuk
+- Ekspor data ke CSV (dikirim via email)
 
-### 🔍 Pencarian & Filter
-- Pencarian berdasarkan metadata dan isi surat.
-- Filter berdasarkan tanggal, perihal, dan status.
+### Surat Keluar
 
-### 📊 Laporan
-- Export CSV untuk surat masuk & keluar, dikirim ke email.
-- Disertai filter berdasarkan waktu, perihal, dan status.
+- CRUD surat keluar
+- Upload file (pdf atau gambar) → Ekstrak data otomatis (opsional)
+- Ringkasan isi surat dengan AI
+- Rekomendasi kategori otomatis menggunakan AI
+- Filter surat keluar
+- Ekspor data ke CSV (dikirim via email)
+
+### Kategori Surat
+
+- CRUD kategori surat untuk mengorganisasi surat masuk & keluar
+
+### Manajemen Pengguna
+
+- CRUD pengguna
+- Kirim email otomatis berisi password saat pengguna dibuat
+
+### Jabatan
+
+- CRUD jabatan
+- Digunakan untuk pembatasan hak akses ke fitur-fitur aplikasi
+- Hak akses yang tersedia:
+    - **Pengguna**: `ViewUser`, `AddUser`, `EditUser`, `DeleteUser`
+    - **Jabatan**:  `ViewRole`, `AddRole`, `EditRole`, `DeleteRole`
+    - **Surat Masuk**: `ViewIncomingLetter`, `AddIncomingLetter`, `EditIncomingLetter`, `DeleteIncomingLetter`
+    - **Surat Keluar**: `ViewOutgoingLetter`, `AddOutgoingLetter`, `EditOutgoingLetter`, `DeleteOutgoingLetter`
+    - **Kategori Surat**: `ViewLetterCategory`, `AddLetterCategory`, `EditLetterCategory`, `DeleteLetterCategory`
+    - **Disposisi**: `ViewDisposition`, `AddDisposition`, `EditDisposition`, `DeleteDisposition`
 
 ## Teknologi
 
@@ -72,13 +123,13 @@ Untuk rancangan aplikasi silakan merujuk ke halaman [blueprint](./blueprint.md).
 
 Untuk instalasi aplikasi silakan merujuk ke halaman [installation](./installation.md).
 
-## 📸 Screenshot
+## Screenshot
 
 ![Home](ss/Screenshot%202025-05-18%20at%2005.53.35.png)
 ![Dashboard](ss/Screenshot%202025-05-18%20at%2005.54.40.png)
 ![Inbox](ss/Screenshot%202025-05-18%20at%2006.47.29.png)
 
-## 📄 License
+## License
 
 This project is proprietary software.  
 © 2025 [404NotFoundIndonesia](https://github.com/404NotFoundIndonesia) – All rights reserved.  

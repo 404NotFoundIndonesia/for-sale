@@ -67,7 +67,7 @@ Jika tidak ada error, buka file `.env` dan sesuaikan isinya terutama yang ditand
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=titania
+DB_DATABASE=triton
 DB_USERNAME=<DI SINI>
 DB_PASSWORD=<DI SINI>
 GEMINI_API_KEY=<DI SINI>
