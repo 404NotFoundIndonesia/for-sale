@@ -16,9 +16,9 @@ Kumpulan source code digital produk yang tersedia untuk dijual. Semua project da
 
 Berikut adalah daftar project/kode yang tersedia:
 
-| Nama Produk        | Deskripsi Singkat                            | Folder       | Status     |
-|--------------------|-----------------------------------------------|--------------|------------|
-| Triton    | Aplikasi berbasis web untuk mengelola surat masuk dan keluar, dilengkapi dengan fitur AI untuk ekstraksi data otomatis, klasifikasi isi, ringkasan, dan saran disposisi. | [`triton`](triton/README.md) | ✅ Siap jual |
+| Produk | Deskripsi | Link |
+|--------------------|-----------------------------------------------|--------------|
+| [Triton](./triton/README.md) | Aplikasi berbasis web untuk mengelola surat masuk dan keluar, dilengkapi dengan fitur AI untuk ekstraksi data otomatis, klasifikasi isi, ringkasan, dan saran disposisi. | [📹 Demo](https://youtu.be/j4BLQi60wZ0) [🛒 Beli](https://lynk.id/iqbaleff214/jp76e78xmkp6) |
 
 
 > Catatan: Masuk ke masing-masing folder untuk dokumentasi lengkap & cara penggunaan.
