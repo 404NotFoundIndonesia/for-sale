@@ -73,6 +73,8 @@ DB_PASSWORD=<DI SINI>
 GEMINI_API_KEY=<DI SINI>
 ```
 
+Untuk dapat terintegrasi dengan AI, pastikan Anda mengisi variable `GEMINI_API_KEY`. Cara mendapatkan `key` Gemini silakan merujuk ke laman [AI Google for Developers](https://ai.google.dev/gemini-api/docs).
+
 ## Migration
 
 Untuk memastikan `database` beserta skemanya ada, jalankan perintah berikut
