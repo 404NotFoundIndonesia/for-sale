@@ -123,6 +123,10 @@ Untuk rancangan aplikasi silakan merujuk ke halaman [blueprint](./blueprint.md).
 
 Untuk instalasi aplikasi silakan merujuk ke halaman [installation](./installation.md).
 
+## User Guide
+
+Anda bisa melihat dokumentasi atau cara penggunaan Triton di halaman [user guide](./USER_GUIDE.md).
+
 ## Screenshot
 
 ![Home](ss/Screenshot%202025-05-18%20at%2005.53.35.png)
